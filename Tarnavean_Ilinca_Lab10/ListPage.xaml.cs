@@ -29,5 +29,14 @@ namespace Tarnavean_Ilinca_Lab10
             await App.Database.DeleteShopListAsync(slist);
             await Navigation.PopAsync();
         }
+        async void OnChooseButtonClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ProductPage((ShopList)
+           this.BindingContext)
+            {
+                BindingContext = new Product()
+            });
+
+        }
     }
 }
